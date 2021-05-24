@@ -42,13 +42,13 @@ program Program
                 Matrix(1, i) = -2 * pi + Matrix(1, i)
             end if
             if ( Matrix(1, i) < (-1 * pi) ) then
-                Matrix(1, i) = pi + Matrix(1, i)
+                Matrix(1, i) = 2 * pi + Matrix(1, i)
             end if
             if ( Matrix(2, i) > pi ) then
                 Matrix(2, i) = -2 * pi + Matrix(2, i)
             end if
             if ( Matrix(2, i) < (-1 * pi) ) then
-                Matrix(2, i) = pi + Matrix(2, i)
+                Matrix(2, i) = 2 * pi + Matrix(2, i)
             end if
         end do
         open(unit = 1, file="Output.txt")
