@@ -28,8 +28,8 @@ program Program
         integer :: i
         real, dimension(4,6000) :: Matrix
         real :: pi = 4.0 * atan(1.0)
-        Matrix(1,1) = 90.0 * (pi / 180.0)
-        Matrix(2,1) = 0.0 * (pi / 180.0)
+        Matrix(1,1) = 180.0 * (pi / 180.0)
+        Matrix(2,1) = 90.0 * (pi / 180.0)
         Matrix(3,1) = 0.0
         Matrix(4,1) = 0.0
         do i = 2, 6000
