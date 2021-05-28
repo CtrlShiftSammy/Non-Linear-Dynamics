@@ -25,13 +25,13 @@ def convert_frames_to_video(pathIn,pathOut,fps):
 
     for i in range(len(frame_array)):
         # writing to a image array
-        out.write(frame_array[i])
+        out.write((i * 100.0 / len(files)) + " % done.")
     out.release()
 
 def main():
     pathIn= 'D:/IIT Roorkee/Miscellaneous/Double Pendulums/Iteration 5/Renders/'
     pathOut = 'D:/IIT Roorkee/Miscellaneous/Double Pendulums/Iteration 5/Video.avi'
-    fps = 25.0
+    fps = 50.0
     convert_frames_to_video(pathIn, pathOut, fps)
 
 if __name__=="__main__":
