@@ -35,7 +35,7 @@ public class Program {
          * t2) * Math.cos(t1 - t2);
          */
         double alpha = 2 * Math.sin(t1 - t2)
-                * (w1 * w1 * l1 * (m1 + m2) + g * (m1 + m2) * Math.cos(t1) + w2 * w2 * l2 * m2 * Math.cos(t1 - t1));
+                * (w1 * w1 * l1 * (m1 + m2) + g * (m1 + m2) * Math.cos(t1) + w2 * w2 * l2 * m2 * Math.cos(t1 - t2));
         alpha /= (l2 * (2 * m1 + m2 - m2 * Math.cos(2 * t1 - 2 * t2)));
         return alpha;
     }
@@ -46,7 +46,7 @@ public class Program {
         int width;
         int height;
         int iterations;
-        int time = 10;
+        int time = 100;
         double dt = 0.0025; // (1/400)
         iterations = (int) (time / dt);
         try {
@@ -108,7 +108,9 @@ public class Program {
                     }
                 }
                 File output = new File(destination + "Renders/Frame" + (i + 1) + ".jpg");
-                System.out.println((i + 1) + " images done");
+                System.out.print(
+                        "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+                System.out.print("Rendered " + (i + 1) + " out of " + (iterations) + " images.");
                 ImageIO.write(image, "jpg", output);
             }
         } catch (Exception e) {

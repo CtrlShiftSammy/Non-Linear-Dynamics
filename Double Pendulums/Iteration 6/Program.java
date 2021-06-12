@@ -37,7 +37,7 @@ public class Program {
          * t2) * Math.cos(t1 - t2);
          */
         double alpha = 2 * Math.sin(t1 - t2)
-                * (w1 * w1 * l1 * (m1 + m2) + g * (m1 + m2) * Math.cos(t1) + w2 * w2 * l2 * m2 * Math.cos(t1 - t1));
+                * (w1 * w1 * l1 * (m1 + m2) + g * (m1 + m2) * Math.cos(t1) + w2 * w2 * l2 * m2 * Math.cos(t1 - t2));
         alpha /= (l2 * (2 * m1 + m2 - m2 * Math.cos(2 * t1 - 2 * t2)));
         alpha -= 0.01 * (l1 + l2 * Math.cos(t1 - t2)) * w2;
         return alpha;
@@ -49,7 +49,7 @@ public class Program {
         int width;
         int height;
         int iterations;
-        int time = 25;
+        int time = 100;
         double dt = 0.0025; // (1/400)
         iterations = (int) (time / dt);
         try {
