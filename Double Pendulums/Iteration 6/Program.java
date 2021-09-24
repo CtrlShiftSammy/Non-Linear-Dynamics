@@ -49,11 +49,11 @@ public class Program {
         int width;
         int height;
         int iterations;
-        int time = 100;
+        int time = 5;
         double dt = 0.0025; // (1/400)
         iterations = (int) (time / dt);
         try {
-            String destination = "D:/IIT Roorkee/Miscellaneous/Double Pendulums/Iteration 6/";
+            String destination = "/media/sammy/New Volume/Projects/Non-Linear-Dynamics/Double Pendulums/Iteration 6/";
             File input = new File(destination + "BaseImage.jpg");
             image = ImageIO.read(input);
             width = image.getWidth();
@@ -115,9 +115,8 @@ public class Program {
                 }
                 System.out
                         .print("Rendered " + (i + 1) + " out of " + (iterations) + " images, ETA: "
-                                + (int) ((timeElapsed / 1000000000)
-                                        * (((double) (iterations - i - 1) / (double) (i + 1))) * 100) / 100
-                                + " seconds.");
+                        + (int) ((timeElapsed / 1000000000) * (((double) (iterations - i - 1) / (double) (i + 1))) * 100) / 6000 + " minutes "
+                        + ((int) ((timeElapsed / 1000000000)* (((double) (iterations - i - 1) / (double) (i + 1))) * 100) / 100)%60 + " seconds.");
                 ImageIO.write(image, "jpg", output);
             }
         } catch (Exception e) {

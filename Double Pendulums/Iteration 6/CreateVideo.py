@@ -29,8 +29,9 @@ def convert_frames_to_video(pathIn,pathOut,fps):
     out.release()
 
 def main():
-    pathIn= 'D:/IIT Roorkee/Miscellaneous/Double Pendulums/Iteration 6/Renders/'
-    pathOut = 'D:/IIT Roorkee/Miscellaneous/Double Pendulums/Iteration 6/Video.avi'
+    destination = "/media/sammy/New Volume/Projects/Non-Linear-Dynamics/Double Pendulums/Iteration 6/";
+    pathIn = destination + 'Renders/'
+    pathOut = destination + 'Video.avi'
     fps = 50.0
     convert_frames_to_video(pathIn, pathOut, fps)
 
