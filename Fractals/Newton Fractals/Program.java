@@ -49,12 +49,17 @@ public class Program {
                         ColorMatrix[0] = 0;
                         ColorMatrix[1] = 0;
                         ColorMatrix[2] = 0;
+                        double distance = width;
                         for(int l = 0; l < 3; l++)
                         {
-                            if ((Math.abs(ZMatrix[j][k][0] - RootMatrix[l][0]) < 0.001) && (Math.abs(ZMatrix[j][k][1] - RootMatrix[l][1]) < 0.001)) 
+                            if (Math.pow(Math.abs(ZMatrix[j][k][0] - RootMatrix[l][0]), 2) + Math.pow(Math.abs(ZMatrix[j][k][1] - RootMatrix[l][1]), 2)<=Math.pow(distance, 2)) 
                             {
                                 ColorMatrix[l] = 255;
-
+                                distance = Math.sqrt(Math.pow(Math.abs(ZMatrix[j][k][0] - RootMatrix[l][0]), 2) + Math.pow(Math.abs(ZMatrix[j][k][1] - RootMatrix[l][1]), 2));
+                                for(int m = 0; m<l; m++)
+                                {
+                                    ColorMatrix[m]=0;
+                                }
                             }
                         }
                         Color newColor = new Color(ColorMatrix[0], ColorMatrix[1], ColorMatrix[2]);
