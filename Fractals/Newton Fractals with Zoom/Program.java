@@ -37,8 +37,8 @@ public class Program {
             {
                 for (int j = 0; j < width; j++) {
                     for (int k = 0; k < height; k++) {
-                        ZMatrix[j][k][0] = ((double)j - (double)width / 2.0 - Target.re()) * Math.pow(0.98, h) + Target.re();
-                        ZMatrix[j][k][1] = ((double)k - (double)height / 2.0 - Target.im()) * Math.pow(0.98, h) + Target.im();
+                        ZMatrix[j][k][0] = ((double)j - (double)width / 2.0 - Target.re()) * Math.pow(0.99, h) + Target.re();
+                        ZMatrix[j][k][1] = ((double)k - (double)height / 2.0 - Target.im()) * Math.pow(0.99, h) + Target.im();
                         //zoom = Math.pow(0.99, -2.0*h);
                         //ZMatrix[j][k][0] = (j - width / 2.0) * Math.sqrt(1.0 - (double) h / (steps+1));
                         //ZMatrix[j][k][1] = (k - height / 2.0) * Math.sqrt(1.0 - (double) h / (steps+1));                    
@@ -86,7 +86,8 @@ public class Program {
                 }
                 long endTime = System.nanoTime();
                 long timeElapsed = endTime - startTime;
-                File output = new File(destination + "Renders/Frame" + (h + 1) + ".jpg");
+                File output1 = new File(destination + "Renders/Frame" + (h + 1) + ".jpg");
+                File output2 = new File(destination + "Renders/Frame" + (2*steps - h) + ".jpg");
                 for (int j = 0; j < 150; j++) 
                 {
                     System.out.print("\b");
@@ -95,7 +96,9 @@ public class Program {
                         .print("Rendered " + (h + 1) + " out of " + (steps) + " images, ETA: "
                         + (int) ((timeElapsed / 1000000000) * (((double) (steps - h - 1) / (double) (h + 1))) * 100) / 6000 + " minutes "
                         + ((int) ((timeElapsed / 1000000000)* (((double) (steps - h - 1) / (double) (h + 1))) * 100) / 100)%60 + " seconds.");
-                ImageIO.write(image, "jpg", output);
+                ImageIO.write(image, "jpg", output1);
+                ImageIO.write(image, "jpg", output2);
+
             }
         } catch (Exception e) 
         {
