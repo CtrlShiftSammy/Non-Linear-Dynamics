@@ -31,14 +31,14 @@ public class Program {
             RootMatrix[1][1] = 0.5 * Math.sqrt(3);
             RootMatrix[2][0] = -0.5;
             RootMatrix[2][1] = -0.5 * Math.sqrt(3);
-            Complex Target = new Complex((0.151) * width , (-0.151 * Math.tan(pi / 3.0)) * height);
+            Complex Target = new Complex((0.15858) * width , (-0.15858 * Math.tan(pi / 3.0)) * height);
             long startTime = System.nanoTime();
             for (int h = 0; h < steps; h++)
             {
                 for (int j = 0; j < width; j++) {
                     for (int k = 0; k < height; k++) {
-                        ZMatrix[j][k][0] = ((double)j - (double)width / 2.0 - Target.re()) * Math.pow(0.99, h) + Target.re();
-                        ZMatrix[j][k][1] = ((double)k - (double)height / 2.0 - Target.im()) * Math.pow(0.99, h) + Target.im();
+                        ZMatrix[j][k][0] = ((double)j - (double)width / 2.0 - Target.re()) * Math.pow(0.98, h) + Target.re();
+                        ZMatrix[j][k][1] = ((double)k - (double)height / 2.0 - Target.im()) * Math.pow(0.98, h) + Target.im();
                         //zoom = Math.pow(0.99, -2.0*h);
                         //ZMatrix[j][k][0] = (j - width / 2.0) * Math.sqrt(1.0 - (double) h / (steps+1));
                         //ZMatrix[j][k][1] = (k - height / 2.0) * Math.sqrt(1.0 - (double) h / (steps+1));                    
