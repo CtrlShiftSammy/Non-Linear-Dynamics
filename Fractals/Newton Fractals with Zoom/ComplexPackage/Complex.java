@@ -153,14 +153,14 @@ public class Complex {
     public Complex function() {
         Complex a = this;
         Complex one_c = new Complex(1.0, 0.0);        
-        Complex f = a.times(a.times(a)).minus(one_c);
+        Complex f = a.times(a.times(a.times(a.times(a.times(a))))).minus(one_c);
         //Complex f = a.sin();
         return f;
     }
     public Complex derivative() {
         Complex a = this;
-        Complex three_c = new Complex(3.0, 0.0);        
-        Complex f = a.times(a).times(three_c);
+        Complex n_c = new Complex(6.0, 0.0);        
+        Complex f = a.times(a.times(a.times(a.times(a)))).times(n_c);
         //Complex f = a.cos();
         return f;
     }

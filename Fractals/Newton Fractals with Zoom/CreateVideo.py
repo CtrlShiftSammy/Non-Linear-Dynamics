@@ -20,19 +20,22 @@ def convert_frames_to_video(pathIn,pathOut,fps):
         print(filename)
         #inserting the frames into an image array
         frame_array.append(img)
-
+    
     out = cv2.VideoWriter(pathOut,cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
 
     for i in range(len(frame_array)):
         # writing to a image array
         out.write(frame_array[i])
+    for i in range(len(frame_array)):
+        # writing to a image array
+        out.write(frame_array[len(frame_array)-1-i])
     out.release()
 
 def main():
     destination = "/media/sammy/New Volume/Projects/Non-Linear-Dynamics/Fractals/Newton Fractals with Zoom/"
     pathIn = destination + 'Renders/'
     pathOut = destination + 'Video.avi'
-    fps = 50.0
+    fps = 30.0
     convert_frames_to_video(pathIn, pathOut, fps)
 
 if __name__=="__main__":
