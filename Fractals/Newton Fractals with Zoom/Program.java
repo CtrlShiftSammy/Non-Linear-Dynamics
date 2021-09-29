@@ -14,7 +14,7 @@ public class Program {
         int width;
         int height;
         int iterations = 200;
-        int steps = 500;
+        int steps = 5;
         int r = 6;
         double speed = 0.99;
         //double zoom;
@@ -135,7 +135,6 @@ public class Program {
                         + ((int) ((timeElapsed / 1000000000)* (((double) (steps - h - 1) / (double) (h + 1))) * 100) / 100)%60 + " seconds.");
                 ImageIO.write(image, "jpg", output1);
                 //ImageIO.write(image, "jpg", output2);
-
             }
         } catch (Exception e) 
         {
