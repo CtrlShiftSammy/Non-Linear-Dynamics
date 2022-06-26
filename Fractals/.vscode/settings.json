@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "Newton Fractals with Zoom",
         "Newton Fractals",
-        "Newton Fractals with Zoom"
+        "Buddhabrot Fractals"
     ]
 }

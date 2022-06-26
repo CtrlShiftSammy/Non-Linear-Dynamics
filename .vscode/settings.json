@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
         "Fractals/Nova Fractals",
+        "Fractals/Newton Fractals with Zoom",
         "Fractals/Newton Fractals",
         "Double Pendulums/Iteration 6",
-        "Fractals/Newton Fractals with Zoom"
+        "Fractals/Mandelbrot Sets with Pickover Stalks"
     ]
 }
